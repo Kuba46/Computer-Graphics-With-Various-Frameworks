@@ -7,6 +7,6 @@ public static class Program
     [STAThread]
     public static void Main()
     {
-        Application.Run(new RotatingCube());
+        Application.Run(new RotatingPyramid());
     }
 }

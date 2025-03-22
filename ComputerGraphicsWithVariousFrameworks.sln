@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotating Cube", "Rotating Cube\Rotating Cube.csproj", "{DB038531-D9FE-441C-A839-C41AF6FDA78D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rotating Cube CPP", "Rotating Cube CPP\Rotating Cube CPP.vcxproj", "{68C467C4-50D0-4740-9C1D-89D1AFE8CF3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotating Pyramid", "Rotating Cone\Rotating Pyramid.csproj", "{138D5A32-0F4C-B3A0-4A23-30F25ADED459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainWindow", "MainWindow\MainWindow.csproj", "{783073BD-04FF-473F-9F5E-968AD98A996B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,30 @@ Global
 		{68C467C4-50D0-4740-9C1D-89D1AFE8CF3E}.Release|x64.Build.0 = Release|x64
 		{68C467C4-50D0-4740-9C1D-89D1AFE8CF3E}.Release|x86.ActiveCfg = Release|Win32
 		{68C467C4-50D0-4740-9C1D-89D1AFE8CF3E}.Release|x86.Build.0 = Release|Win32
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|x64.Build.0 = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Debug|x86.Build.0 = Debug|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|x64.ActiveCfg = Release|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|x64.Build.0 = Release|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|x86.ActiveCfg = Release|Any CPU
+		{138D5A32-0F4C-B3A0-4A23-30F25ADED459}.Release|x86.Build.0 = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|x64.Build.0 = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Debug|x86.Build.0 = Debug|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|x64.ActiveCfg = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|x64.Build.0 = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|x86.ActiveCfg = Release|Any CPU
+		{783073BD-04FF-473F-9F5E-968AD98A996B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

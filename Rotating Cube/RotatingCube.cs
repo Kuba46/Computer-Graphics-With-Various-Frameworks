@@ -1,35 +1,36 @@
+using Geometry;
 using System;
 using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
-
-namespace Geometry;
 
 public class RotatingCube : Form
 {
     private System.Windows.Forms.Timer timer;
     private float angleX = 0;
     private float angleY = 0;
+    private float angleZ = 0;
     private CubeGeometry cubeGeometry;
 
     public RotatingCube()
     {
-        this.Text = "Rotating Cube";
-        this.Size = new Size(800, 800);
-        this.DoubleBuffered = true;
-        this.Paint += new PaintEventHandler(this.OnPaint);
-        this.timer = new System.Windows.Forms.Timer();
-        this.timer.Interval = 1;
-        this.timer.Tick += new EventHandler(this.OnTimerTick);
-        this.timer.Start();
-        this.cubeGeometry = new CubeGeometry();
+        Text = "Rotating Cube";
+        Size = new Size(800, 800);
+        DoubleBuffered = true;
+        Paint += new PaintEventHandler(OnPaint);
+        timer = new System.Windows.Forms.Timer();
+        timer.Interval = 1;
+        timer.Tick += new EventHandler(OnTimerTick);
+        timer.Start();
+        cubeGeometry = new CubeGeometry();
     }
 
     private void OnTimerTick(object? sender, EventArgs e)
     {
-        this.angleX += 0.1f;
-        this.angleY += 0.1f;
-        this.Invalidate();
+        angleX += 0.1f;
+        angleY += 0.1f;
+        angleZ += 0.6f;
+        Invalidate();
     }
 
     private void OnPaint(object? sender, PaintEventArgs e)
@@ -37,21 +38,22 @@ public class RotatingCube : Form
         Graphics g = e.Graphics;
         g.Clear(Color.Black);
 
-        CubeGeometry.Point3D[] rotatedVertices = RotateVertices(cubeGeometry.Vertices, angleX, angleY);
+        CubeGeometry.Point3D[] rotatedVertices = RotateVertices(cubeGeometry.Vertices, angleX, angleY, angleZ);
 
-        PointF[] projected = ProjectVertices(rotatedVertices, this.ClientSize.Width, this.ClientSize.Height, 256, 4);
+        PointF[] projected = ProjectVertices(rotatedVertices, ClientSize.Width, ClientSize.Height, 256, 4);
 
         Pen pen = new Pen(Color.White);
         DrawCube(g, pen, projected);
     }
 
-    private CubeGeometry.Point3D[] RotateVertices(CubeGeometry.Point3D[] vertices, float angleX, float angleY)
+    private CubeGeometry.Point3D[] RotateVertices(CubeGeometry.Point3D[] vertices, float angleX, float angleY, float angleZ)
     {
         CubeGeometry.Point3D[] rotated = new CubeGeometry.Point3D[vertices.Length];
         for (int i = 0; i < vertices.Length; i++)
         {
             rotated[i] = RotateX(vertices[i], angleX);
             rotated[i] = RotateY(rotated[i], angleY);
+            rotated[i] = RotateZ(rotated[i], angleZ);
         }
         return rotated;
     }
@@ -80,6 +82,18 @@ public class RotatingCube : Form
         );
     }
 
+    private CubeGeometry.Point3D RotateZ(CubeGeometry.Point3D point, float angle)
+    {
+        float rad = angle * (float)Math.PI / 180;
+        float cos = (float)Math.Cos(rad);
+        float sin = (float)Math.Sin(rad);
+        return new CubeGeometry.Point3D(
+            cos * point.X - sin * point.Y,
+            sin * point.X + cos * point.Y,
+            point.Z
+        );
+    }
+
     private PointF[] ProjectVertices(CubeGeometry.Point3D[] vertices, int width, int height, float fov, float viewerDistance)
     {
         PointF[] projected = new PointF[vertices.Length];
@@ -92,9 +106,9 @@ public class RotatingCube : Form
 
     private PointF Project(CubeGeometry.Point3D point, int width, int height, float fov, float viewerDistance)
     {
-        float factor = fov / (viewerDistance - point.Z);
+        float factor = fov / (viewerDistance + point.Z);
         float x = point.X * factor + width / 2;
-        float y = point.Y * factor + height / 2;
+        float y = -point.Y * factor + height / 2;
         return new PointF(x, y);
     }
 
