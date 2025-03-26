@@ -5,6 +5,9 @@
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button openCubeButton;
         private System.Windows.Forms.Button openPyramidButton;
+        private System.Windows.Forms.Button openIcosahedronButton;
+        private System.Windows.Forms.Button openConeButton;
+        private System.Windows.Forms.Button openCylinderButton;
 
         /// <summary>
         ///  Required designer variable.
@@ -35,6 +38,9 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.openCubeButton = new System.Windows.Forms.Button();
             this.openPyramidButton = new System.Windows.Forms.Button();
+            this.openIcosahedronButton = new System.Windows.Forms.Button();
+            this.openConeButton = new System.Windows.Forms.Button();
+            this.openCylinderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
             this.openCubeButton.Location = new System.Drawing.Point(100, 100);
@@ -53,7 +59,31 @@
             this.openPyramidButton.UseVisualStyleBackColor = true;
             this.openPyramidButton.Click += new System.EventHandler(this.openPyramid_Click);
 
-            this.closeButton.Location = new System.Drawing.Point(100, 400);
+            this.openIcosahedronButton.Location = new System.Drawing.Point(100, 300);
+            this.openIcosahedronButton.Name = "openIcosahedronButton";
+            this.openIcosahedronButton.Size = new System.Drawing.Size(100, 50);
+            this.openIcosahedronButton.TabIndex = 3;
+            this.openIcosahedronButton.Text = "Open Icosahedron";
+            this.openIcosahedronButton.UseVisualStyleBackColor = true;
+            this.openIcosahedronButton.Click += new System.EventHandler(this.openIcosahedron_Click);
+
+            this.openConeButton.Location = new System.Drawing.Point(100, 400);
+            this.openConeButton.Name = "openConeButton";
+            this.openConeButton.Size = new System.Drawing.Size(100, 50);
+            this.openConeButton.TabIndex = 4;
+            this.openConeButton.Text = "Open Cone";
+            this.openConeButton.UseVisualStyleBackColor = true;
+            this.openConeButton.Click += new System.EventHandler(this.openCone_Click);
+
+            this.openCylinderButton.Location = new System.Drawing.Point(100, 500);
+            this.openCylinderButton.Name = "openCylinderButton";
+            this.openCylinderButton.Size = new System.Drawing.Size(100, 50);
+            this.openCylinderButton.TabIndex = 5;
+            this.openCylinderButton.Text = "Open Cylinder";
+            this.openCylinderButton.UseVisualStyleBackColor = true;
+            this.openCylinderButton.Click += new System.EventHandler(this.openCylinder_click);
+
+            this.closeButton.Location = new System.Drawing.Point(100, 600);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 50);
             this.closeButton.TabIndex = 0;
@@ -67,6 +97,9 @@
             this.Controls.Add(this.openCubeButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.openPyramidButton);
+            this.Controls.Add(this.openIcosahedronButton);
+            this.Controls.Add(this.openConeButton);
+            this.Controls.Add(this.openCylinderButton);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.ResumeLayout(false);
@@ -89,6 +122,24 @@
         {
             RotatingPyramid rotatingPyramid = new RotatingPyramid();
             rotatingPyramid.Show();
+        }
+
+        private void openIcosahedron_Click(object sender, EventArgs e)
+        {
+            RotatingIcosahedron rotatingIcosahedron = new RotatingIcosahedron();
+            rotatingIcosahedron.Show();
+        }
+
+        private void openCone_Click(object sender, EventArgs e)
+        {
+            RotatingCone rotatingCone = new RotatingCone();
+            rotatingCone.Show();
+        }
+
+        private void openCylinder_click(object sender, EventArgs e)
+        {
+            RotatingCylinder rotatingCylinder = new RotatingCylinder();
+            rotatingCylinder.Show();
         }
     }
 }

@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rotating Cone\Rotating Pyramid.csproj" />
-    <ProjectReference Include="..\Rotating Cube\Rotating Cube.csproj" />
+    <ProjectReference Include="..\Rotating Shape\Rotating Shape.csproj" />
   </ItemGroup>
 
 </Project>

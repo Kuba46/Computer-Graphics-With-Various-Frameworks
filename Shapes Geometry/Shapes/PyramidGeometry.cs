@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Geometry;
-
-public class PyramidGeometry
+public class PyramidGeometry : IShapeGeometry
 {
     public Point3D[] Vertices { get; private set; }
 
@@ -18,19 +18,5 @@ public class PyramidGeometry
             new Point3D(0, 2, 0),
             new Point3D(1, 1, 4) // Apex vertex
         };
-    }
-
-    public struct Point3D
-    {
-        public float X;
-        public float Y;
-        public float Z;
-
-        public Point3D(float x, float y, float z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
     }
 }
